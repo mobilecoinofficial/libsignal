@@ -15,6 +15,8 @@ pub const ENCLAVE_ID_SVR2_STAGING_OLD: &[u8] =
     &hex!("acb1973aa0bbbd14b3b4e06f145497d948fd4a98efc500fcce363b3b743ec482");
 pub const ENCLAVE_ID_SVR2_STAGING: &[u8] =
     &hex!("38e01eff4fe357dc0b0e8ef7a44b4abc5489fbccba3a78780f3872c277f62bf3");
+pub const ENCLAVE_ID_SVR2_STAGING_SENTZ: &[u8] =
+    &hex!("38e01eff4fe357dc0b0e8ef7a44b4abc5489fbccba3a78780f3872c277f62bf3");
 
 pub const ENCLAVE_ID_SVR3_SGX_STAGING: &[u8] =
     &hex!("c49739bec442e209506152e38ae498c3688d32d4f575d7b23a31166b5506c610");
@@ -95,7 +97,7 @@ pub(crate) const ACCEPTABLE_SW_ADVISORIES: &SmallMap<&'static [u8], &'static [&'
             &["INTEL-SA-00615", "INTEL-SA-00657"] as &[&str],
         ),
         (
-            ENCLAVE_ID_SVR2_STAGING,
+            ENCLAVE_ID_SVR2_STAGING_SENTZ,
             &["INTEL-SA-00615", "INTEL-SA-00657"] as &[&str],
         ),
         (
@@ -121,6 +123,12 @@ pub(crate) const ACCEPTABLE_SW_ADVISORIES: &SmallMap<&'static [u8], &'static [&'
 pub(crate) const DEFAULT_SW_ADVISORIES: &[&str] = &[];
 
 /// Expected raft configuration for a given enclave.
+pub const RAFT_CONFIG_SVR2_STAGING_SENTZ: &RaftConfig = &RaftConfig {
+    min_voting_replicas: 1,
+    max_voting_replicas: 5,
+    super_majority: 0,
+    group_id: 921052792121315603,
+};
 pub const RAFT_CONFIG_SVR2_STAGING: &RaftConfig = &RaftConfig {
     min_voting_replicas: 3,
     max_voting_replicas: 5,
@@ -189,7 +197,7 @@ pub const RAFT_CONFIG_SVR3_TPM2SNP_PROD: &RaftConfig = &RaftConfig {
 pub(crate) static EXPECTED_RAFT_CONFIG_SVR2: SmallMap<&'static [u8], &'static RaftConfig, 4> =
     SmallMap::new([
         (ENCLAVE_ID_SVR2_STAGING_OLD, RAFT_CONFIG_SVR2_STAGING_OLD),
-        (ENCLAVE_ID_SVR2_STAGING, RAFT_CONFIG_SVR2_STAGING),
+        (ENCLAVE_ID_SVR2_STAGING_SENTZ, RAFT_CONFIG_SVR2_STAGING_SENTZ),
         (ENCLAVE_ID_SVR2_PROD_OLD, RAFT_CONFIG_SVR2_PROD_OLD),
         (ENCLAVE_ID_SVR2_PROD, RAFT_CONFIG_SVR2_PROD),
     ]);
