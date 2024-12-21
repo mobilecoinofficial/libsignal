@@ -42,6 +42,9 @@ cast_possible_truncation = "warn"
 [workspace.lints.rust]
 unexpected_cfgs = { level = "warn", check-cfg = ['cfg(fuzzing)'] }
 
+[net]
+git-fetch-with-cli = true
+
 [workspace.dependencies]
 # Our own crates, so that we don't have to depend on them by inter-crate paths
 attest = { path = "rust/attest" }
