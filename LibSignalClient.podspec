@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
           exit 0
         fi
         #"${PODS_TARGET_SRCROOT}"/bin/fetch_archive.py -u "https://build-artifacts.signal.org/libraries/${LIBSIGNAL_FFI_PREBUILD_ARCHIVE}" -c "${LIBSIGNAL_FFI_PREBUILD_CHECKSUM}" -o "${USER_LIBRARY_DIR}/Caches/org.signal.libsignal"
-        "${PODS_TARGET_SRCROOT}"/bin/fetch_archive.py -u "https://yus.s3.amazonaws.com/target.tar.gz" -c "${LIBSIGNAL_FFI_PREBUILD_CHECKSUM}" -o "${USER_LIBRARY_DIR}/Caches/org.signal.libsignal"
+        "${PODS_TARGET_SRCROOT}"/bin/fetch_archive.py -u "https://yus.s3.amazonaws.com/${LIBSIGNAL_FFI_PREBUILD_ARCHIVE}" -c "${LIBSIGNAL_FFI_PREBUILD_CHECKSUM}" -o "${USER_LIBRARY_DIR}/Caches/org.signal.libsignal"
       ),
     },
     { name: 'Extract libsignal-ffi prebuild',

@@ -13,4 +13,4 @@ for target in "${targets[@]}"; do
     cp "../target/$target/release/libsignal_ffi.a" ".build/target/$target/release"
 done
 
-tar -czvf target.tar.gz -C .build target
+tar -czvf "libsignal-client-ios-build-v0.64.1.tar.gz" -C .build target
