@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
       'OTHER_LDFLAGS' => '$(LIBSIGNAL_FFI_LIB_TO_LINK)',
 
       'LIBSIGNAL_FFI_PREBUILD_ARCHIVE' => "libsignal-client-ios-build-v#{s.version}.tar.gz",
-      'LIBSIGNAL_FFI_PREBUILD_CHECKSUM' => ENV.fetch('LIBSIGNAL_FFI_PREBUILD_CHECKSUM', ''),
+      'LIBSIGNAL_FFI_PREBUILD_CHECKSUM' => "15dbc87a89689176a788069602c6ed02b6cccd2672e502c1aeba368bb4921059",
 
       'CARGO_BUILD_TARGET[sdk=iphonesimulator*][arch=arm64]' => 'aarch64-apple-ios-sim',
       'CARGO_BUILD_TARGET[sdk=iphonesimulator*][arch=*]' => 'x86_64-apple-ios',
