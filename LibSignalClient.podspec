@@ -4,7 +4,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'LibSignalClient'
+  s.name             = 'Sentz_LibSignalClient'
   s.version          = '0.64.1'
   s.summary          = 'A Swift wrapper library for communicating with the Signal messaging service.'
 
